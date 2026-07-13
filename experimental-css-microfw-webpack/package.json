@@ -1,0 +1,53 @@
+{
+  "name": "experimental-css-microfw-webpack",
+  "version": "1.0.0-SNAPSHOT",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.18.0"
+  },
+  "scripts": {
+    "build": "NODE_ENV=production rspack build",
+    "build:dev": "NODE_ENV=development rspack build",
+    "build:start": "cd dist && rspack serve",
+    "start": "NODE_ENV=development rspack serve",
+    "lint": "eslint .",
+    "test": "jest",
+    "check-format": "prettier --log-level error --check '**/*.{js,jsx,ts,tsx,cjs,mjs,json,css,html}'",
+    "format": "prettier --write '**/*.{js,jsx,ts,tsx,cjs,mjs,json,css,html}'"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@rspack/cli": "~1.2.0",
+    "@rspack/core": "~1.2.0",
+    "@rspack/plugin-react-refresh": "~1.0.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^26.1.1",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "autoprefixer": "^10.1.0",
+    "css-loader": "^7.1.2",
+    "eslint": "^10.7.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.3",
+    "globals": "^17.7.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^30.4.2",
+    "jest-environment-jsdom": "^30.4.1",
+    "postcss": "^8.2.1",
+    "postcss-loader": "^8.0.0",
+    "prettier": "^3.9.5",
+    "react-refresh": "^0.14.0",
+    "ts-jest": "^29.4.11",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.64.0"
+  },
+  "dependencies": {
+    "@module-federation/enhanced": "^0.8.9",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }
+}
