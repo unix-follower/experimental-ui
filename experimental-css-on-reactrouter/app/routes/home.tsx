@@ -1,6 +1,7 @@
 import type { Route } from "./+types/home"
 import Welcome from "../welcome/welcome"
 
+// eslint-disable-next-line no-empty-pattern, react-refresh/only-export-components
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "New React Router App" },
