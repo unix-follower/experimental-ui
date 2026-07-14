@@ -1,9 +1,9 @@
-name: Build experimental-css-microfw-vite
+name: Build experimental-css-on-microfw-vite
 on:
   pull_request:
     paths:
-      - .github/workflows/build-experimental-css-microfw-vite.yaml
-      - experimental-css-microfw-vite/**
+      - .github/workflows/build-experimental-css-on-microfw-vite.yaml
+      - experimental-css-on-microfw-vite/**
     types:
       - opened
       - reopened
@@ -26,39 +26,39 @@ jobs:
         # https://github.com/marketplace/actions/setup-node-js-environment
         uses: actions/setup-node@v6
         with:
-          node-version-file: experimental-css-microfw-vite/package.json
+          node-version-file: experimental-css-on-microfw-vite/package.json
         
       - name: Install dependencies
         shell: bash
-        working-directory: experimental-css-microfw-vite
+        working-directory: experimental-css-on-microfw-vite
         run: npm ci
 
       - name: Check code formatting
         id: check_format
         continue-on-error: true
         shell: bash
-        working-directory: experimental-css-microfw-vite
+        working-directory: experimental-css-on-microfw-vite
         run: npm run check-format
 
       - name: Show format logs on check failure
         if: steps.check_format.outcome == 'failure'
         shell: bash
-        working-directory: experimental-css-microfw-vite
+        working-directory: experimental-css-on-microfw-vite
         run: |
           npm run format
           exit 1
 
       - name: Run ESLint
         shell: bash
-        working-directory: experimental-css-microfw-vite
+        working-directory: experimental-css-on-microfw-vite
         run: npm run lint
 
       - name: Run tests
         shell: bash
-        working-directory: experimental-css-microfw-vite
+        working-directory: experimental-css-on-microfw-vite
         run: npm run test
 
-      - name: Build experimental-css-microfw-vite
+      - name: Build experimental-css-on-microfw-vite
         shell: bash
-        working-directory: experimental-css-microfw-vite
+        working-directory: experimental-css-on-microfw-vite
         run: npm run build

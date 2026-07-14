@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "verbatimModuleSyntax": false,
+    "types": ["vite/client", "jest", "node", "@testing-library/jest-dom"]
+  },
+  "include": ["app", "__mocks__", "jest.setup.ts"]
+}
