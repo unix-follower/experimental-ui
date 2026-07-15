@@ -53,12 +53,22 @@ jobs:
         working-directory: experimental-css-on-electron
         run: npm run lint
 
-      - name: Run tests
+      - name: Run unit tests
+        shell: bash
+        working-directory: experimental-css-on-electron
+        run: npm run test:unit
+
+      - name: Install XVFB and dependencies
         shell: bash
         working-directory: experimental-css-on-electron
         run: |
-          npm run test:unit
-          npm run test:e2e
+          sudo apt-get update
+          sudo apt-get install -y xvfb libgtk-3-0 libnotify-dev libnss3 libxss1 libasound2
+
+      - name: Run tests with virtual display
+        shell: bash
+        working-directory: experimental-css-on-electron
+        run: xvfb-run --auto-servernum npm run test:e2e
 
       - name: Build experimental-css-on-electron
         shell: bash
