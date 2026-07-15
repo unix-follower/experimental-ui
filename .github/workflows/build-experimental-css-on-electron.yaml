@@ -58,12 +58,21 @@ jobs:
         working-directory: experimental-css-on-electron
         run: npm run test:unit
 
-      - name: Install XVFB and dependencies
+      - name: Install XVFB and dependencies for Electron
         shell: bash
         working-directory: experimental-css-on-electron
         run: |
           sudo apt-get update
-          sudo apt-get install -y xvfb libgtk-3-0 libnotify-dev libnss3 libxss1 libasound2
+          sudo apt-get install -y \
+            xvfb \
+            libgtk-3-0 \
+            libnotify-dev \
+            libnss3 \
+            libxss1 \
+            libasound2t64 \
+            libgbm1 \
+            libxkbcommon0 \
+            libxshmfence1
 
       - name: Run tests with virtual display
         shell: bash
