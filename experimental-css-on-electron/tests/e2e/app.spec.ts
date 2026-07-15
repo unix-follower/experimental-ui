@@ -14,7 +14,7 @@ test("Launch app and verify home screen", async () => {
   // then
   expect(await window.title()).toBe("Hello World!")
 
-  const header = window.locator("h1")
+  const header = window.locator("h1").first()
   await expect(header).toHaveText("💖 Hello World!")
 
   await electronApp.close()
