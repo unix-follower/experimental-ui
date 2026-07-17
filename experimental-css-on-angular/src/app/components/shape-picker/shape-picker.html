@@ -1,0 +1,15 @@
+<div>
+  <label for="selectShape">Choose shapes:</label>
+
+  <select id="selectShape" multiple size="4" (change)="onSelectionChange($event)">
+    @for (shape of shapes; track shape.id) {
+      <option [value]="shape.label">
+        {{ shape.label }}
+      </option>
+    }
+  </select>
+
+  @for (shape of selectedShapes(); track shape.id) {
+    <app-shape [shape]="shape.id" />
+  }
+</div>
