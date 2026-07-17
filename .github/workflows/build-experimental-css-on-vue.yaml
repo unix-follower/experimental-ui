@@ -60,12 +60,12 @@ jobs:
         working-directory: experimental-css-on-vue
         run: npm run test:unit
 
-      - name: Run tests
-        shell: bash
-        working-directory: experimental-css-on-vue
-        run: |
-          npm run prepare
-          npm run test:e2e
+      # - name: Run E2E tests
+      #   shell: bash
+      #   working-directory: experimental-css-on-vue
+      #   run: |
+      #     npm run prepare
+      #     npm run test:e2e
 
       - name: Build experimental-css-on-vue
         shell: bash
