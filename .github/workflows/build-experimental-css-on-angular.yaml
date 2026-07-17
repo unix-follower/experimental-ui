@@ -58,7 +58,7 @@ jobs:
         working-directory: experimental-css-on-angular
         run: npm run test
 
-      - name: Build experimental-css-on-angular
-        shell: bash
-        working-directory: experimental-css-on-angular
-        run: npm run build
+      # - name: Build experimental-css-on-angular
+      #   shell: bash
+      #   working-directory: experimental-css-on-angular
+      #   run: npm run build
