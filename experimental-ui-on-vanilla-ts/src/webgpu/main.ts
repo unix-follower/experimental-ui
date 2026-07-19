@@ -239,7 +239,9 @@ export async function drawHighContrastCircles(webGpuCtx: GPUCanvasContext, devic
   }
 
   function render() {
-    renderPassDescriptor.colorAttachments[ARR_1ST_IDX].view = webGpuCtx.getCurrentTexture().createView()
+    renderPassDescriptor.colorAttachments[ARR_1ST_IDX].view = webGpuCtx
+      .getCurrentTexture()
+      .createView()
 
     const encoder = device.createCommandEncoder()
     const pass = encoder.beginRenderPass(renderPassDescriptor)
