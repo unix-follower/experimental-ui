@@ -1,12 +1,30 @@
 import { defineConfig } from "vite"
-import tsconfigPaths from "vite-tsconfig-paths"
+import { globSync } from "glob"
+import { dirname, resolve } from "node:path"
+import { fileURLToPath } from "node:url"
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
+
+const pages = Object.fromEntries(
+  globSync("**/index.html", {
+    cwd: __dirname,
+    ignore: ["**/node_modules/**", "dist/**"],
+  }).map((file) => [file.replace("/index.html", "") || "main", resolve(__dirname, file)]),
+)
+console.debug("HTML pages:", pages)
 
 // https://vitejs.dev/config
 export default defineConfig({
-  plugins: [tsconfigPaths()],
+  resolve: {
+    tsconfigPaths: true,
+  },
+  build: {
+    outDir: "./dist",
+    rollupOptions: { input: pages },
+  },
   test: {
     globals: true,
     environment: "jsdom",
-    // include: ["__test__/unit/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
   },
 })

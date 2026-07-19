@@ -20,7 +20,9 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@types/node": "^26.1.1",
     "@vitest/coverage-v8": "^4.1.10",
+    "glob": "^13.0.6",
     "globals": "^17.7.0",
     "jsdom": "^29.1.1",
     "prettier": "^3.9.5",
