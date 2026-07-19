@@ -7,7 +7,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "experimental-css-on-angular": {
+    "experimental-ui-on-angular": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -55,10 +55,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "experimental-css-on-angular:build:production"
+              "buildTarget": "experimental-ui-on-angular:build:production"
             },
             "development": {
-              "buildTarget": "experimental-css-on-angular:build:development"
+              "buildTarget": "experimental-ui-on-angular:build:development"
             }
           },
           "defaultConfiguration": "development"

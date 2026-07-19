@@ -1,0 +1,17 @@
+main {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  background-color: #0e100f;
+}
+
+.box {
+  display: block;
+  width: 100px;
+  height: 100px;
+  background-color: green;
+  border-radius: 15px;
+}
