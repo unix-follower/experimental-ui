@@ -18,6 +18,9 @@ console.debug("HTML pages:", pages)
 export default defineConfig({
   resolve: {
     tsconfigPaths: true,
+    alias: {
+      "@": fileURLToPath(new URL("./src", import.meta.url)),
+    },
   },
   build: {
     outDir: "./dist",
