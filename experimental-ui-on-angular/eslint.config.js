@@ -5,9 +5,20 @@ import tseslint from "typescript-eslint"
 import angular from "angular-eslint"
 import globals from "globals"
 import prettier from "eslint-config-prettier"
+import json from "@eslint/json"
+import markdown from "@eslint/markdown"
 
 export default defineConfig([
-  globalIgnores(["coverage/**", "dist/**", "node_modules/**"]),
+  globalIgnores([
+    "coverage/**",
+    "dist/**",
+    "node_modules/**",
+    ".angular/*",
+    ".vscode/*",
+    "build/*",
+    "package-lock.json",
+    "public/mockServiceWorker.js",
+  ]),
   {
     files: ["**/*.ts"],
     extends: [
@@ -42,5 +53,24 @@ export default defineConfig([
     files: ["**/*.html"],
     extends: [angular.configs.templateRecommended, angular.configs.templateAccessibility],
     rules: {},
+  },
+  { files: ["**/*.json"], plugins: { json }, language: "json/json", extends: ["json/recommended"] },
+  {
+    files: ["**/*.jsonc"],
+    plugins: { json },
+    language: "json/jsonc",
+    extends: ["json/recommended"],
+  },
+  {
+    files: ["**/*.json5"],
+    plugins: { json },
+    language: "json/json5",
+    extends: ["json/recommended"],
+  },
+  {
+    files: ["**/*.md"],
+    plugins: { markdown },
+    language: "markdown/gfm",
+    extends: ["markdown/recommended"],
   },
 ])

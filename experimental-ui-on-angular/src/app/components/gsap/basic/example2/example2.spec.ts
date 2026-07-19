@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from "@angular/core/testing"
 
-import { ShapePicker } from "./shape-picker"
+import { Example2 } from "./example2"
 
-describe("ShapePicker", () => {
-  let component: ShapePicker
-  let fixture: ComponentFixture<ShapePicker>
+describe("Example2", () => {
+  let component: Example2
+  let fixture: ComponentFixture<Example2>
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ShapePicker],
+      imports: [Example2],
     }).compileComponents()
 
-    fixture = TestBed.createComponent(ShapePicker)
+    fixture = TestBed.createComponent(Example2)
     component = fixture.componentInstance
     await fixture.whenStable()
   })
