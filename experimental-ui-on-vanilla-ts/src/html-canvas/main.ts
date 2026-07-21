@@ -1,3 +1,9 @@
+import "@/instrumentation"
+import opentelemetry from "@opentelemetry/api"
+
+const meter = opentelemetry.metrics.getMeter("html-canvas-page", "1.0.0")
+const counter = meter.createCounter("shape_select_change_counter")
+
 function getBackgroundColor(): string {
   const backgroundInput = document.getElementById("background") as HTMLInputElement
   return backgroundInput.value
@@ -126,6 +132,7 @@ function main() {
   shapeSelect.addEventListener("change", (event) => {
     const target = event.target as HTMLSelectElement
     drawSelectedShapes(ctx, target.value)
+    counter.add(1)
   })
 }
 
