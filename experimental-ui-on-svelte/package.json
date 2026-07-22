@@ -17,8 +17,11 @@
 		"test:unit": "vitest",
 		"test": "npm run test:unit -- --run && npm run test:e2e",
 		"test:e2e": "playwright install && playwright test",
-		"check-format": "prettier --log-level error --check '**/*.{js,jsx,ts,tsx,cjs,mjs,json,css,html}'",
-		"format": "prettier --write '**/*.{js,jsx,ts,tsx,cjs,mjs,json,css,html}'"
+		"check-format": "prettier --log-level error --check '**/*.{js,jsx,ts,tsx,cjs,mjs,json,css,html,svelte}'",
+		"format": "prettier --write '**/*.{js,jsx,ts,tsx,cjs,mjs,json,css,html,svelte}'"
+	},
+	"dependencies": {
+		"uuid": "^14.0.1"
 	},
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",

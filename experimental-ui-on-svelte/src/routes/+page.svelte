@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Shape from '$lib/components/Shape.svelte'
+	import Shape from "$lib/components/Shape.svelte"
 </script>
 
 <svelte:head>
@@ -22,9 +22,8 @@
 <style>
 	:global(body) {
 		margin: 0;
-		font-family: 'Avenir Next', Avenir, 'Segoe UI', sans-serif;
-		background:
-			radial-gradient(circle at top, #fdf7ef 0, #f5efe5 24%, #edf1f5 60%, #e5e9ee 100%);
+		font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+		background: radial-gradient(circle at top, #fdf7ef 0, #f5efe5 24%, #edf1f5 60%, #e5e9ee 100%);
 		color: #14202b;
 	}
 
