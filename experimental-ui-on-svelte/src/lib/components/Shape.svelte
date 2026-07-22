@@ -1,6 +1,6 @@
 <script lang="ts">
-	import './shape.css'
-	import { shapes } from './shapes'
+	import "./shape.css"
+	import { shapes } from "./shapes"
 
 	let { initialSelection = [] }: { initialSelection?: string[] } = $props()
 
