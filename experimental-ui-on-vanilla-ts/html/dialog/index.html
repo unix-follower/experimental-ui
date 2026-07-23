@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Dialog</title>
+    <style>
+      #classic-modal-dialog-section .overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgb(0, 0, 0, 0.5);
+        z-index: 9;
+      }
+      #classic-modal-dialog-section .modal.open,
+      #classic-modal-dialog-section .overlay.open {
+        display: block;
+      }
+      #classic-modal-dialog-section .modal {
+        display: none;
+        position: fixed;
+        padding: 0.5rem;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        background: white;
+        border-radius: 0.25rem;
+        z-index: 10;
+      }
+
+      #html-non-modal-dialog-section dialog::backdrop,
+      #html-modal-dialog-section dialog::backdrop {
+        background-color: hsl(250, 100%, 50%, 0.25);
+      }
+
+      #html-non-modal-dialog-section dialog,
+      #html-modal-dialog-section dialog {
+        top: 50%;
+        left: 50%;
+        right: 20%;
+        translate: -50% -50%;
+        z-index: 10;
+        margin-top: 10px;
+        background: whitesmoke;
+        border: none;
+        border-radius: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="classic-modal-dialog-section">
+      <label for="classic-modal-dialog-section">Classic modal dialog</label>
+      <button data-open-modal>Open</button>
+      <div data-overlay class="overlay"></div>
+      <div data-modal class="modal">
+        <div>This is a modal</div>
+        <button data-close-modal>Close</button>
+      </div>
+    </section>
+
+    <section id="html-non-modal-dialog-section">
+      <label for="html-non-modal-dialog-section">HTML non-modal dialog</label>
+      <button data-open-modal>Open</button>
+      <dialog data-modal>
+        <div>This is a regular dialog</div>
+        <button data-close-modal>Close</button>
+      </dialog>
+    </section>
+
+    <section id="html-modal-dialog-section">
+      <label for="html-modal-dialog-section">HTML modal dialog</label>
+      <button data-open-modal>Open</button>
+      <dialog data-modal>
+        <form method="dialog">
+          <label for="html-modal-dialog-input">Text</label>
+          <input id="html-modal-dialog-input" type="text" />
+          <button formmethod="dialog" type="submit">Cancel</button>
+          <button type="submit">Submit</button>
+        </form>
+      </dialog>
+    </section>
+    <script type="module" src="/src/html/dialog/main.ts"></script>
+  </body>
+</html>
