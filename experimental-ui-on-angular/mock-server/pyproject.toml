@@ -1,0 +1,12 @@
+[project]
+name = "mock-server"
+version = "1.0.0"
+description = ""
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi[standard]>=0.139.2",
+]
+
+[tool.fastapi]
+entrypoint = "main:app"

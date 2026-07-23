@@ -20,4 +20,14 @@ export const routes: Routes = [
     loadComponent: () =>
       import("./components/gsap/basic/example2/example2").then((module) => module.Example2),
   },
+  {
+    path: "task-tracker",
+    loadComponent: () =>
+      import("./components/task-tracker/home/home").then((module) => module.Home),
+  },
+  {
+    path: "task-tracker/about",
+    loadComponent: () =>
+      import("./components/task-tracker/about/about").then((module) => module.About),
+  },
 ]
