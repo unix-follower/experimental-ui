@@ -1,0 +1,10 @@
+<header>
+  <h1>{{ title }}</h1>
+  @if (hasRoute("/task-tracker")) {
+    <app-task-tracker-button
+      color="{{ showAddTask() ? 'red' : 'green' }}"
+      text="{{ showAddTask() ? 'Close' : 'Add' }}"
+      (btnClick)="toggleAddTask()"
+    ></app-task-tracker-button>
+  }
+</header>
