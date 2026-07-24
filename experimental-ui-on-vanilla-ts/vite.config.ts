@@ -7,9 +7,9 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
 const pages = Object.fromEntries(
-  globSync(["**/index.html", "**/*page.html"], {
+  globSync(["**/index.html", "**/*.html"], {
     cwd: __dirname,
-    ignore: ["**/node_modules/**", "dist/**"],
+    ignore: ["**/node_modules/**", "dist/**", "src/**"],
   }).map((file) => [file.replace("/index.html", "") || "main", resolve(__dirname, file)]),
 )
 console.debug("HTML pages:", pages)

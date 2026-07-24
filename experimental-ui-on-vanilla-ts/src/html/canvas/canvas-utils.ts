@@ -1,0 +1,7 @@
+export function randomIntFromRange(min: number, max: number) {
+  return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
+export function randomColor<T>(colors: T[]): T {
+  return colors[Math.floor(Math.random() * colors.length)]
+}
