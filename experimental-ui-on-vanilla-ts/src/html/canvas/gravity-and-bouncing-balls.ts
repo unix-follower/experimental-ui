@@ -90,16 +90,6 @@ function main() {
   canvas.width = innerWidth
   canvas.height = innerHeight
 
-  const mouse = {
-    x: innerWidth / 2,
-    y: innerHeight / 2,
-  }
-
-  addEventListener("mousemove", function (event) {
-    mouse.x = event.clientX
-    mouse.y = event.clientY
-  })
-
   const colors = ["#2185C5", "#7ECEFD", "#FFF6E5", "#FF7F66"]
 
   const gravity = 0.2
@@ -108,10 +98,6 @@ function main() {
   addEventListener("resize", () => {
     canvas.width = innerWidth
     canvas.height = innerHeight
-    init(canvas, colors, gravity, friction)
-  })
-
-  addEventListener("click", () => {
     init(canvas, colors, gravity, friction)
   })
 
