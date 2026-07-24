@@ -12,20 +12,14 @@
 	let xScale = $derived(
 		d3
 			.scaleLinear()
-			.domain([
-				d3.min(data, (row) => +row[xProperty]),
-				d3.max(data, (row) => +row[xProperty]),
-			])
+			.domain([d3.min(data, (row) => +row[xProperty]), d3.max(data, (row) => +row[xProperty])])
 			.range([0, innerChartWidth])
 			.nice(),
 	)
 	let yScale = $derived(
 		d3
 			.scaleLinear()
-			.domain([
-				d3.min(data, (row) => +row[yProperty]),
-				d3.max(data, (row) => +row[yProperty]),
-			])
+			.domain([d3.min(data, (row) => +row[yProperty]), d3.max(data, (row) => +row[yProperty])])
 			.range([innerChartHeight, 0])
 			.nice(),
 	)
@@ -35,7 +29,12 @@
 </script>
 
 <div bind:clientWidth={chartWidth}>
-	<svg width={chartWidth} height={chartHeight} role="img" aria-label="Scatter plot of {yProperty} vs {xProperty}">
+	<svg
+		width={chartWidth}
+		height={chartHeight}
+		role="img"
+		aria-label="Scatter plot of {yProperty} vs {xProperty}"
+	>
 		<g style="transform: translate({margin.left}px, {margin.top}px)">
 			<g style="transform: translate(0, {innerChartHeight}px)">
 				<line x1="0" y1="0" x2={innerChartWidth} y2="0" stroke="black" stroke-width="4px" />
@@ -54,12 +53,7 @@
 				</g>
 			</g>
 			{#each data as row (row["Compound ID"])}
-				<circle
-					cx={xScale(+row[xProperty])}
-					cy={yScale(+row[yProperty])}
-					fill="blue"
-					r="8px"
-				/>
+				<circle cx={xScale(+row[xProperty])} cy={yScale(+row[yProperty])} fill="blue" r="8px" />
 			{/each}
 		</g>
 	</svg>

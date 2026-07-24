@@ -36,7 +36,9 @@
 		Dependent variable
 		<select bind:value={yProperty}>
 			<option value="Polar Surface Area">Polar Surface Area</option>
-			<option value="measured log solubility in mols per litre">Measured Log Solubility in Mols per Litre</option>
+			<option value="measured log solubility in mols per litre"
+				>Measured Log Solubility in Mols per Litre</option
+			>
 		</select>
 	</label>
 </div>
